@@ -9,6 +9,6 @@ interface ApiService {
     @GET("v2/top-headlines")
     suspend fun getHeadlines(
         @Query("sources") sources: String,
-        @Query("api_key") apiKey: String = ApiURL.API_KEY
+        @Query("apiKey") apiKey: String = ApiURL.API_KEY
     ): BaseModel
 }
