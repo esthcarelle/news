@@ -20,18 +20,15 @@ class BiometricAuthenticator {
                 executor,
                 object : BiometricPrompt.AuthenticationCallback() {
                     override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
-                        //TODO handle authentication success, proceed to HomeScreen
                         Timber.tag("TAG").d("Authentication successful!!!")
                     }
 
                     override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
                         Timber.tag("TAG").e("onAuthenticationError")
-                        //TODO Handle authentication errors.
                     }
 
                     override fun onAuthenticationFailed() {
                         Timber.tag("TAG").e("onAuthenticationFailed")
-                        //TODO Handle authentication failures.
                     }
                 })
 
