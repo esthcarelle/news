@@ -23,7 +23,9 @@ data class Article(
     @SerializedName("urlToImage")
     val urlToImage: String
 ){
-    override fun toString(): String = Uri.encode(Gson().toJson(this))
+    private fun toJsonString(): String = Gson().toJson(this)
+
+    override fun toString(): String = Uri.encode(toJsonString())
 }
 class HeaderArgType : JsonNavType<Article>() {
     override fun fromJsonParse(value: String): Article = Gson().fromJson(value, Article::class.java)
